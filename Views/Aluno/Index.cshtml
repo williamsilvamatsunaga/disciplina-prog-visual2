@@ -1,0 +1,34 @@
+﻿@model List<Aluno>
+
+<div class="container mt-4">
+    <h2>
+        ALunos
+    </h2>
+    <p class="text-muted">
+        Exemplo de exibição de alunos cadastrados
+    </p>
+    
+    <table class="table table-striped table-bordered mt-3">
+        <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Curso</th>
+            <th>Nota</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            @foreach (var aluno in Model)
+            {
+                <tr>
+                    <td>@aluno.Id</td>
+                    <td>@aluno.Nome</td>
+                    <td>@aluno.Curso</td>
+                    <td>@aluno.Nota</td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+</div>
