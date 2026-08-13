@@ -5,15 +5,16 @@ namespace MeuApp.Controllers;
 
 public class AlunoController : Controller
 {
-    // GET
-    public IActionResult Index()
+    // Ação GET: Exibe o formulário em branco
+    public IActionResult Criar()
     {
-        var alunos = new List<Aluno>()
-        {
-            new Aluno() { Id = 1, Nome = "William", Curso = "ADS", Nota = 10 },
-            new Aluno() { Id = 1, Nome = "William", Curso = "ADS", Nota = 10 },
-            new Aluno() { Id = 1, Nome = "William", Curso = "ADS", Nota = 10 }
-        };
-        return View(alunos);
+        return View();
+    }
+
+    // Ação POST: Recebe os dados preenchidos
+    [HttpPost]
+    public IActionResult Criar(Aluno aluno)
+    {
+        return Content($"Aluno '{aluno.Nome}' com matrícula '{aluno.Matricula}' recebido com sucesso!");
     }
 }
